@@ -1,4 +1,4 @@
-<?php
+a<?php
 
 namespace authentification;
 //Import PHPMailer classes into the global namespace
@@ -37,10 +37,10 @@ function sendmeil($ClientMail, $code, $name = null, $phone = null)
         if ($name == null && $phone == null) {
             // cette block pour les inscription
              //Recipients
-        $mail->setFrom('origamy.dev@gmail.com', 'ICNS');
+        $mail->setFrom('example@gmail.com', 'ICNS');
         // $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
         $mail->addAddress("$ClientMail");                        //Name is optional
-        $mail->addReplyTo('origamy.dev@gmail.com', 'ICNS');
+        $mail->addReplyTo('example@gmail.com', 'ICNS');
         // $mail->addAttachment('../confirmations/mailings/confirmation-presentiel/Frais_d_inscription.pdf', 'Frais d\'inscription.pdf'); 
         $mail->isHTML(true);                                     //Set email format to HTML 
         $mail->Subject = utf8_decode('FORMATION CERTIFIANTE MICRONUTRITION & CANCER');
@@ -50,7 +50,7 @@ function sendmeil($ClientMail, $code, $name = null, $phone = null)
             // cette block pour contactez nous
         $mail->setFrom("$ClientMail", "$name");
         // $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
-        $mail->addAddress("origamy.dev@gmail.com");                        //Name is optional
+        $mail->addAddress("example@gmail.com");                        //Name is optional
         $mail->addReplyTo("$ClientMail", "$name");
         $mail->isHTML(true);                                     //Set email format to HTML 
         $mail->Subject = utf8_decode('FORMATION CERTIFIANTE MICRONUTRITION & CANCER');
